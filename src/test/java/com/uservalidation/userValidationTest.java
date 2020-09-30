@@ -156,4 +156,18 @@ public class userValidationTest {
         Assert.assertFalse(result);
     }
 
+    @Test
+    public void givenPassword_with_AtLeast_1_UpperCase_shouldReturnTrue()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validatePassword("bridgeLabz");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenPassword_with_No_UpperCase_shouldReturnFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validatePassword("bridgelabz");
+        Assert.assertFalse(result);
+    }
 }
