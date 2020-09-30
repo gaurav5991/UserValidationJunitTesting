@@ -64,7 +64,6 @@ public class userValidationTest {
     {
         UserValidation validate = new UserValidation();
         boolean result = validate.validateEmail("abc@yahoo.com");
-        System.out.println(result);
         Assert.assertTrue(result);
     }
     @Test
@@ -72,7 +71,6 @@ public class userValidationTest {
     {
         UserValidation validate = new UserValidation();
         boolean result = validate.validateEmail(".abc@abc.com");
-        System.out.println(result);
         Assert.assertFalse(result);
     }
     @Test
@@ -80,7 +78,6 @@ public class userValidationTest {
     {
         UserValidation validate = new UserValidation();
         boolean result = validate.validateEmail("abc@gmail.com.aa.au");
-        System.out.println(result);
         Assert.assertFalse(result);
     }
     @Test
@@ -88,7 +85,6 @@ public class userValidationTest {
     {
         UserValidation validate = new UserValidation();
         boolean result = validate.validateEmail("abc12@gmail.com.1a");
-        System.out.println(result);
         Assert.assertFalse(result);
     }
 
@@ -97,7 +93,6 @@ public class userValidationTest {
     {
         UserValidation validate = new UserValidation();
         boolean result = validate.validateEmail("abc45@abc@gmail.com");
-        System.out.println(result);
         Assert.assertFalse(result);
     }
     @Test
@@ -105,7 +100,6 @@ public class userValidationTest {
     {
         UserValidation validate = new UserValidation();
         boolean result = validate.validateEmail("abc..2002@gmail.com");
-        System.out.println(result);
         Assert.assertFalse(result);
     }
 
@@ -114,7 +108,6 @@ public class userValidationTest {
     {
         UserValidation validate = new UserValidation();
         boolean result = validate.validateEmail("abc.xyz@gmail.co.in");
-        System.out.println(result);
         Assert.assertFalse(result);
     }
 
