@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.uservalidation.userValidationTest" tests="21" skipped="0" failures="0" errors="0" timestamp="2020-09-30T16:03:13" hostname="DESKTOP-G28VQJM" time="0.017">
+<testsuite name="com.uservalidation.userValidationTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2020-09-30T16:21:27" hostname="DESKTOP-G28VQJM" time="0.012">
   <properties/>
   <testcase name="givenEmail_having_double_dots_ReturnsFalse" classname="com.uservalidation.userValidationTest" time="0.002"/>
-  <testcase name="givenEmail_having_digit_in_tld_ReturnsFalse" classname="com.uservalidation.userValidationTest" time="0.001"/>
-  <testcase name="givenLastName_When_ProperShouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.001"/>
+  <testcase name="givenPasswordshouldReturnFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
+  <testcase name="givenEmail_having_digit_in_tld_ReturnsFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
+  <testcase name="givenLastName_When_ProperShouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.0"/>
   <testcase name="givenEmail_having_multiple_tld_ReturnsFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
   <testcase name="givenPassword_with_AtLeast_1_UpperCase_shouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.0"/>
   <testcase name="givenEmail_starting_with_sp_character_ReturnsFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
   <testcase name="givenPassword_with_No_UpperCase_shouldReturnFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
   <testcase name="givenFirstName_When_Short_ShouldReturnFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
-  <testcase name="givenPassword_if_Improper_shouldReturnFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
+  <testcase name="givenPassword_if_Improper_shouldReturnFalse" classname="com.uservalidation.userValidationTest" time="0.001"/>
   <testcase name="givenLastName_have_special_Character_ShouldReturnFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
   <testcase name="givenMobileNumber_if_space_not_There_After_Country_Code_shouldReturnFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
   <testcase name="givenFirstName_When_ProperShouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.0"/>
-  <testcase name="givenEmail_if_valid_shouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.001"/>
-  <testcase name="givenMobileNumber_if_countryCode_of_min_2_digit_shouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.0"/>
+  <testcase name="givenPasswordshouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.0"/>
+  <testcase name="givenEmail_if_valid_shouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.0"/>
+  <testcase name="givenMobileNumber_if_countryCode_of_min_2_digit_shouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.001"/>
   <testcase name="givenFirstName_have_special_Character_ShouldReturnFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
-  <testcase name="givenMobileNumber_if_proper_shouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.001"/>
-  <testcase name="givenEmail_having_less_than_2_character_ReturnsFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
+  <testcase name="givenMobileNumber_if_proper_shouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.0"/>
+  <testcase name="givenEmail_having_less_than_2_character_ReturnsFalse" classname="com.uservalidation.userValidationTest" time="0.001"/>
   <testcase name="givenLastName_When_Short_ShouldReturnFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
-  <testcase name="givenEmail_having_double_At_the_Rate_ReturnsFalse" classname="com.uservalidation.userValidationTest" time="0.001"/>
+  <testcase name="givenEmail_having_double_At_the_Rate_ReturnsFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
   <testcase name="givenMobileNumber_if_Improper_shouldReturnFalse" classname="com.uservalidation.userValidationTest" time="0.0"/>
-  <testcase name="givenPassword_if_proper_shouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.001"/>
+  <testcase name="givenPassword_if_proper_shouldReturnTrue" classname="com.uservalidation.userValidationTest" time="0.0"/>
   <system-out><![CDATA[Welcome to User Validation Program
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
