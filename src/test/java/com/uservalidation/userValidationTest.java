@@ -160,7 +160,7 @@ public class userValidationTest {
     public void givenPassword_with_AtLeast_1_UpperCase_shouldReturnTrue()
     {
         UserValidation validate = new UserValidation();
-        boolean result = validate.validatePassword("Bridgelabz1");
+        boolean result = validate.validatePassword("Bridgelabz@1");
         Assert.assertTrue(result);
     }
     @Test
@@ -182,6 +182,21 @@ public class userValidationTest {
     {
         UserValidation validate = new UserValidation();
         boolean result = validate.validatePassword("BRIDGElabz");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenPassword_with_Exactly_1_Sp_char_shouldReturnTrue()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validatePassword("Gaurav@1234");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenPassword_more_than_1_special_char_shouldReturnFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validatePassword("BRID@#$labz");
         Assert.assertFalse(result);
     }
 }
