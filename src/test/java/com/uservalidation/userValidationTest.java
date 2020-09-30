@@ -134,6 +134,12 @@ public class userValidationTest {
         boolean result = validate.validateMobileNumber("9198765432103");
         Assert.assertFalse(result);
     }
+    public void givenMobileNumber_with_Special_characters_shouldReturnFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateMobileNumber("+91 9876543210");
+        Assert.assertFalse(result);
+    }
     @Test
     public void givenMobileNumber_if_countryCode_of_min_2_digit_shouldReturnTrue()
     {
