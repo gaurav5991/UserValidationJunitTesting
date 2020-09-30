@@ -59,4 +59,63 @@ public class userValidationTest {
         Assert.assertFalse(result);
     }
 
+    @Test
+    public void givenEmail_if_valid_shouldReturnTrue()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateEmail("abc@yahoo.com");
+        System.out.println(result);
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenEmail_starting_with_sp_character_ReturnsFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateEmail(".abc@abc.com");
+        System.out.println(result);
+        Assert.assertFalse(result);
+    }
+    @Test
+    public void givenEmail_having_multiple_tld_ReturnsFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateEmail("abc@gmail.com.aa.au");
+        System.out.println(result);
+        Assert.assertFalse(result);
+    }
+    @Test
+    public void givenEmail_having_digit_in_tld_ReturnsFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateEmail("abc12@gmail.com.1a");
+        System.out.println(result);
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenEmail_having_double_At_the_Rate_ReturnsFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateEmail("abc45@abc@gmail.com");
+        System.out.println(result);
+        Assert.assertFalse(result);
+    }
+    @Test
+    public void givenEmail_having_double_dots_ReturnsFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateEmail("abc..2002@gmail.com");
+        System.out.println(result);
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenEmail_having_less_than_2_character_ReturnsFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateEmail("abc.xyz@gmail.co.in");
+        System.out.println(result);
+        Assert.assertFalse(result);
+    }
+
 }
