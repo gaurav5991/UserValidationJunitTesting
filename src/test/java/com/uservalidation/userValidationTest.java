@@ -63,7 +63,7 @@ public class userValidationTest {
     public void givenEmail_if_valid_shouldReturnTrue()
     {
         UserValidation validate = new UserValidation();
-        boolean result = validate.validateEmail("abc@yahoo.com");
+        boolean result = validate.validateEmail("abc-100@yahoo.com");
         Assert.assertTrue(result);
     }
     @Test
@@ -107,7 +107,38 @@ public class userValidationTest {
     public void givenEmail_having_less_than_2_character_ReturnsFalse()
     {
         UserValidation validate = new UserValidation();
-        boolean result = validate.validateEmail("abc.xyz@gmail.co.in");
+        boolean result = validate.validateEmail("abc.xyz@gmail.c.i");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenMobileNumber_if_proper_shouldReturnTrue()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateMobileNumber("91 9876543210");
+        Assert.assertTrue(result);
+
+    }
+
+    @Test
+    public void givenMobileNumber_if_Improper_shouldReturnFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateMobileNumber("91 98765432103");
+        Assert.assertFalse(result);
+    }
+    @Test
+    public void givenMobileNumber_if_space_not_There_After_Country_Code_shouldReturnFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateMobileNumber("9198765432103");
+        Assert.assertFalse(result);
+    }
+    @Test
+    public void givenMobileNumber_if_countryCode_of_min_2_digit_shouldReturnTrue()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validateMobileNumber("9 9876543210");
         Assert.assertFalse(result);
     }
 
