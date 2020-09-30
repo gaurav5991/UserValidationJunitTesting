@@ -141,5 +141,19 @@ public class userValidationTest {
         boolean result = validate.validateMobileNumber("9 9876543210");
         Assert.assertFalse(result);
     }
+    @Test
+    public void givenPassword_if_proper_shouldReturnTrue()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validatePassword("G@urav1234.,433'[]");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenPassword_if_Improper_shouldReturnFalse()
+    {
+        UserValidation validate = new UserValidation();
+        boolean result = validate.validatePassword("Gaur@v1");
+        Assert.assertFalse(result);
+    }
 
 }
