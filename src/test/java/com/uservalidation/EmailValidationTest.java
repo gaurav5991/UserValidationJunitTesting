@@ -13,52 +13,53 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 public class EmailValidationTest
 {
-        private String validateEmail;
-        private boolean ExpectedResult;
-        private EmailValidation emailValidation;
+        private String Email;
+        private UserValidation userValidation;
 
-        public EmailValidationTest(String validateEmail,boolean ExpectedResult)
+        public EmailValidationTest(String Email)
         {
-            super();
-            this.validateEmail = validateEmail;
-            this.ExpectedResult = ExpectedResult;
+            this.Email  = Email;
         }
 
     @Before
     public void intialize() {
-        emailValidation = new EmailValidation();
+        userValidation = new UserValidation();
     }
 
     @Parameterized.Parameters
     public static Collection input()
     {
-        return Arrays.asList(new Object[][]{{ "abc@yahoo.com", true },
-                                            {"abc-100@yahoo.com", true },
-                                            { "abc.100@yahoo.com", true },
-                                            { "abc-100@abc.net", true },
-                                            {"abc111@abc.com", true},
-                                            { "abc.100@abc.com.au",true },
-                                            { "abc@1.com", true },
-                                            { "abc@gmail.com.com", true },
-                                            { "abc+100@gmail.com", true },
-                                            { "abc@.com", false },
-                                            { "abc@123gmail.a", false },
-                                            { "abc123@.com", false },
-                                            { "abc123@.com.com", false },
-                                            { ".abc@abc.com", false },
-                                            { "abc()*@gmail.com", false },
-                                            { "abc@%*.com.com", false },
-                                            { "abc..2002@.gmail.com", false },
-                                            { "abc.@gmail.com", false },
-                                            { "abc@abc@gmail.com", false },
-                                            { "abc@gmail.com.1a", false },
-                                            { "abc@gmail.com.aa.au", false },});
+        return Arrays.asList(new Object[]{ "abc@yahoo.com",
+                "abc-100@yahoo.com",
+                "abc.100@yahoo.com",
+                "abc-100@abc.net",
+                "abc111@abc.com",
+                "abc.100@abc.com.au",
+                "abc@1.com",
+                "abc@gmail.com.com",
+                "abc+100@gmail.com",
+                "abc@.com",
+                "abc@123gmail.a",
+                "abc123@.com",
+                "abc123@.com.com",
+                ".abc@abc.com",
+                "abc()*@gmail.com",
+                "abc@%*.com.com",
+                "abc..2002@.gmail.com",
+                "abc.@gmail.com",
+                "abc@abc@gmail.com",
+                "abc@gmail.com.1a",
+                "abc@gmail.com.aa.au"});
     }
 
     @Test
     public void givenEmail_As_variable_shouldReturn_As_per_ParamaterisedTest()
     {
-        System.out.println(validateEmail + " "+ExpectedResult);
-        Assert.assertEquals(ExpectedResult,emailValidation.EmailValidate(validateEmail));
+        try {
+            userValidation.validateEmail(this.Email);
+        }catch (UserValidationException e){
+            System.out.println(e.type+" will give message "+e.getMessage());
+            Assert.assertEquals(UserValidationException.ExceptionType.INVALID_EMAIL,e.type);
+        }
     }
 }
