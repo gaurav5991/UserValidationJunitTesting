@@ -56,7 +56,7 @@ public class EmailValidationTest
     public void givenEmail_As_variable_shouldReturn_As_per_ParamaterisedTest()
     {
         try {
-            userValidation.validateEmail(this.Email);
+            userValidation.validateEmail.checkifValid(this.Email);
         }catch (UserValidationException e){
             System.out.println(e.type+" will give message "+e.getMessage());
             Assert.assertEquals(UserValidationException.ExceptionType.INVALID_EMAIL,e.type);
